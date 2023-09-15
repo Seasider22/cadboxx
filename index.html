@@ -149,8 +149,19 @@
             justify-content: center;
         }
     </style>
+<script>	
+	Function() {
+	import { EXTTextureWebP } from '@gltf-transform/extensions';
 	
-	
+	// Create an Extension attached to the Document.
+	const webpExtension = document.createExtension(EXTTextureWebP)
+	    .setRequired(true);
+	document.createTexture('MyWebPTexture')
+	    .setMimeType('image/webp')
+	    .setImage(fs.readFileSync('my-texture.webp'));
+	}
+</script>
+
 </head>
 <body>
 	  <a-scene gltf-exporter
