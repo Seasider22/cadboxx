@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>gui test</title>
-	<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<title>CADBOXX</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
     <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
@@ -115,6 +115,9 @@
             }
         })
     </script>
+	<!--DRAG-N-DROP
+	
+	-->
     <script src=" https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
     <style>
         .button:hover {
@@ -146,8 +149,19 @@
             justify-content: center;
         }
     </style>
+<script>	
+	Function() {
+	import { EXTTextureWebP } from '@gltf-transform/extensions';
 	
-	
+	// Create an Extension attached to the Document.
+	const webpExtension = document.createExtension(EXTTextureWebP)
+	    .setRequired(true);
+	document.createTexture('MyWebPTexture')
+	    .setMimeType('image/webp')
+	    .setImage(fs.readFileSync('my-texture.webp'));
+	}
+</script>
+
 </head>
 <body>
 	  <a-scene gltf-exporter
@@ -325,9 +339,17 @@
             <a-mixin id="constraint_hinge_x" constraint="type: hinge;target:bodyx;axis:1 0 0;targetAxis:1 0 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
             <a-mixin id="constraint_hinge_y" constraint="type: hinge;target:bodyy;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
             <a-mixin id="constraint_hinge_z" constraint="type: hinge;target:bodyz;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+
+
+
             <a-mixin id="constraint_distance" constraint="type: distance;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+
+
             <a-mixin id="constraint_slider" constraint="type: slider;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+
+
             <a-mixin id="constraint_lock" constraint="type: lock;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
+
             <a-mixin id="constraint_pointTopoint_x" constraint="type: pointTopoint;axis:1 0 0;targetAxis:1 0 0;pivot:1 0 0;targetPivot:0 0 0"></a-mixin>
             <a-mixin id="constraint_pointTopoint_y" constraint="type: pointTopoint;axis:0 1 0;targetAxis:0 1 0;pivot:0 1 0;targetPivot:0 0 0"></a-mixin>
             <a-mixin id="constraint_pointTopoint_z" constraint="type: pointTopoint;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 1;targetPivot:0 0 0"></a-mixin>
