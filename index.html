@@ -164,8 +164,15 @@
 
 </head>
 <body>
-	  <a-scene gltf-exporter
-             physics="debug: false; friction: 0.1; restitution: 0.5; gravity:-10" >
+<div id="container">
+      <button id="export-scene" class="button"><span>Export Scene</span></button>
+      <button id="export-scene-bin" class="button"><span>Export Scene Binary</span></button>
+      <button id="export-sphere" class="button"><span>Export Sphere</span></button>
+      <button id="export-two" class="button"><span>Export Sphere and Box (Array)</span></button>
+      <button id="export-selector" class="button"><span>Export boxes (Selector)</span></button>
+    </div>
+	
+<a-scene gltf-exporter physics="debug: false; friction: 0.1; restitution: 0.5; gravity:-10" >
         <a-assets>
 
             <a-mixin id="cube" geometry="primitive: box; width: 2.0; height: 2.0; depth: 2.0"
@@ -339,17 +346,9 @@
             <a-mixin id="constraint_hinge_x" constraint="type: hinge;target:bodyx;axis:1 0 0;targetAxis:1 0 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
             <a-mixin id="constraint_hinge_y" constraint="type: hinge;target:bodyy;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
             <a-mixin id="constraint_hinge_z" constraint="type: hinge;target:bodyz;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-
-
-
             <a-mixin id="constraint_distance" constraint="type: distance;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-
-
             <a-mixin id="constraint_slider" constraint="type: slider;axis:0 1 0;targetAxis:0 1 0;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-
-
             <a-mixin id="constraint_lock" constraint="type: lock;pivot:0 0 0;targetPivot:0 0 0"></a-mixin>
-
             <a-mixin id="constraint_pointTopoint_x" constraint="type: pointTopoint;axis:1 0 0;targetAxis:1 0 0;pivot:1 0 0;targetPivot:0 0 0"></a-mixin>
             <a-mixin id="constraint_pointTopoint_y" constraint="type: pointTopoint;axis:0 1 0;targetAxis:0 1 0;pivot:0 1 0;targetPivot:0 0 0"></a-mixin>
             <a-mixin id="constraint_pointTopoint_z" constraint="type: pointTopoint;axis:0 0 1;targetAxis:0 0 1;pivot:0 0 1;targetPivot:0 0 0"></a-mixin>
